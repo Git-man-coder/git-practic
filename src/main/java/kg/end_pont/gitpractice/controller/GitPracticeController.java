@@ -11,10 +11,9 @@ public class GitPracticeController {
 
     @GetMapping(value = "/sum")
     public String sum(
-            @RequestParam int a,
-            @RequestParam int b
+            @RequestParam Integer a,
+            @RequestParam Integer b
     ) {
         return String.valueOf("Sum of " + a + " and " + b + " = " + (a + b));
     }
-
 }
