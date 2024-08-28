@@ -1,12 +1,18 @@
 package kg.end_pont.gitpractice.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/git")
 public class GitPracticeController {
 
+    @GetMapping(value = "/hello")
+    public String sayHello(){
+        return "Hello Git Mega-Lab";
+    }
 
                         /*
                         1) git checkout -b {Имя вашей ветки} develop
@@ -25,4 +31,12 @@ public class GitPracticeController {
       2) TASK_5:  Добавить контроллер get который будет принимать 2 целочисленных параметра и сравнивать их
       2) TASK_6:  Добавить контроллер get который будет принимать 2 целочисленных параметра и делить по модулю их
      */
+
+    @GetMapping(value = "/sum")
+    public Integer sum(
+            @RequestParam Integer a,
+            @RequestParam Integer b
+    ) {
+        return a + b;
+    }
 }
