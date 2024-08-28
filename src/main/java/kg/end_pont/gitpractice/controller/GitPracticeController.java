@@ -9,14 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/git")
 public class GitPracticeController {
 
-
-
-
     @GetMapping(value = "/hello")
     public String sayHello(){
         return "Hello Git Mega-Lab";
     }
-
 
                         /*
                         1) git checkout -b {Имя вашей ветки} develop
@@ -37,10 +33,10 @@ public class GitPracticeController {
      */
 
     @GetMapping(value = "/sum")
-    public String sum(
+    public Integer sum(
             @RequestParam Integer a,
             @RequestParam Integer b
     ) {
-        return String.valueOf("Sum of " + a + " and " + b + " = " + (a + b));
+        return a + b;
     }
 }
